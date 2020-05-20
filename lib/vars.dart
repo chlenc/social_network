@@ -10,7 +10,7 @@ class User {
 }
 
 
-var userDara = User(
+var userData = User(
     avatar: Image.asset('assets/images/ava1.png'),
     firstName: 'Klous',
     lastName: 'Santa',

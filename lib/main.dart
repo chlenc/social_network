@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:socialnetwork/screens/Messages/Messages.dart';
 import 'package:socialnetwork/screens/Profile/Profile.dart';
+import 'package:socialnetwork/screens/Wall/Wall.dart';
 import 'package:socialnetwork/screens/WelcomePage/WelcomePage.dart';
 
 void main() => runApp(App());
@@ -13,9 +14,10 @@ class App extends StatelessWidget {
       title: '',
       theme: ThemeData(fontFamily: 'Circe'),
 //      home: WelcomePage(),
-      initialRoute: '/',
+      initialRoute: '/Welcome',
       routes: {
-        '/': (context) => WelcomePage(),
+        '/Wall': (context) => Wall(),
+        '/Welcome': (context) => WelcomePage(),
         '/Profile': (context) => Profile(),
         '/Messages': (context) => Messages(),
 

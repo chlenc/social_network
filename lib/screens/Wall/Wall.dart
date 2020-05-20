@@ -29,22 +29,22 @@ class Wall extends StatelessWidget {
                 Post(
                   lastUpdate: DateTime.now(),
                   asset: 'assets/images/asset1.jpeg',
-                  owner: userDara,
+                  owner: userData,
                 ),
                 Post(
                   lastUpdate: DateTime.now(),
                   asset: 'assets/images/asset2.jpeg',
-                  owner: userDara,
+                  owner: userData,
                 ),
                 Post(
                   lastUpdate: DateTime.now(),
                   asset: 'assets/images/asset3.jpeg',
-                  owner: userDara,
+                  owner: userData,
                 ),
                 Post(
                   lastUpdate: DateTime.now(),
                   asset: 'assets/images/asset4.jpeg',
-                  owner: userDara,
+                  owner: userData,
                 ),
               ],
             ),

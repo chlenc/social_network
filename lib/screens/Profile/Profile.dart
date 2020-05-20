@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:socialnetwork/screens/Profile/UserBlock.dart';
+import 'package:socialnetwork/vars.dart';
+
+import 'ProfileTitle.dart';
 
 class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Row(
+        child: ListView(
           children: [
-            SizedBox(height: 64),
-            IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () => Navigator.pop(context),
-            ),
-            Text("Profile"),
-          ],
+            ProfileTitle(),
+          ]
         ),
       ),
     );

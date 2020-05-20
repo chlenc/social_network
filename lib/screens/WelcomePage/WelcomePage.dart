@@ -12,11 +12,7 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
-
-  handleOpenHome() {
-    Route route = MaterialPageRoute(builder: (context) => Wall());
-    Navigator.push(context, route);
-  }
+  handleOpenHome() => Navigator.pushNamed(context, '/Wall');
 
   @override
   Widget build(BuildContext context) {
@@ -65,19 +61,17 @@ class _WelcomePageState extends State<WelcomePage> {
   }
 }
 
-
 var pagination = SwiperCustomPagination(
     builder: (BuildContext context, SwiperPluginConfig config) => Padding(
-      padding: EdgeInsets.only(left: 40),
-      child: Row(
-          children: Iterable.generate(config.itemCount)
-              .map((i) => Round(
-            key: ValueKey(i.toString()),
-            selected: i == config.activeIndex,
-          ))
-              .toList()),
-    ));
-
+          padding: EdgeInsets.only(left: 40),
+          child: Row(
+              children: Iterable.generate(config.itemCount)
+                  .map((i) => Round(
+                        key: ValueKey(i.toString()),
+                        selected: i == config.activeIndex,
+                      ))
+                  .toList()),
+        ));
 
 class Round extends StatelessWidget {
   Round({Key key, this.selected = false}) : super(key: key);

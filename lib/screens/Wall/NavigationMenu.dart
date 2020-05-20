@@ -13,7 +13,7 @@ class NavigationMenu extends StatelessWidget {
       child: SafeArea(
         child: Column(
           children: <Widget>[
-            UserBlock(userDara),
+            UserBlock(userData),
             NavButton(
               text: 'Go to profile',
               icon: Icon(Icons.home, color: Colors.white),
