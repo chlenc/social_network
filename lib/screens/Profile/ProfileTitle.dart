@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:socialnetwork/components/NavigationTitle.dart';
 import 'package:socialnetwork/components/ScreenTitle.dart';
 import 'package:socialnetwork/screens/Profile/UserBlock.dart';
 import 'package:socialnetwork/utils/hexToColor.dart';
@@ -14,27 +15,59 @@ class ProfileTitle extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              IconButton(
-                icon: Icon(Icons.arrow_back),
-                onPressed: () => Navigator.pop(context),
-                color: hexToColor('#222B45'),
-                alignment: Alignment.centerLeft,
-              ),
-              FlatButton(
-                onPressed: () => Scaffold.of(context).openDrawer(),
-                child: Image.asset('assets/images/menu.png'),
-              ),
-            ],
-          ),
+          NavigationTitle(),
           Padding(
             padding: EdgeInsets.only(left: 8),
             child: Row(children: <Widget>[ScreenTitle(text: 'My Profile')]),
           ),
           SizedBox(height: 32),
           UserBlock(userData),
+          ProfileInfo()
+        ],
+      ),
+    );
+  }
+}
+
+class ProfileInfo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: <Widget>[
+        ProfileInfoItem(title: 'Photos', count: '576'),
+        ProfileInfoItem(title: 'Followers', count: '12,454'),
+        ProfileInfoItem(title: 'Follows', count: '127'),
+      ],
+    );
+  }
+}
+
+class ProfileInfoItem extends StatelessWidget {
+  ProfileInfoItem({this.count, this.title});
+
+  final String title;
+  final String count;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: <Widget>[
+          Text(
+            title,
+            style: TextStyle(
+              color: hexToColor('#C7ABBA'),
+              fontSize: 18,
+            ),
+          ),
+          Text(
+            count,
+            style: TextStyle(
+              color: hexToColor('#6A515E'),
+              fontSize: 24,
+            ),
+          ),
         ],
       ),
     );

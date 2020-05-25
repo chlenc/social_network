@@ -13,14 +13,12 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: '',
       theme: ThemeData(fontFamily: 'Circe'),
-//      home: WelcomePage(),
       initialRoute: '/Welcome',
       routes: {
         '/Wall': (context) => Wall(),
         '/Welcome': (context) => WelcomePage(),
         '/Profile': (context) => Profile(),
         '/Messages': (context) => Messages(),
-
       },
     );
   }
